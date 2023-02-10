@@ -7,10 +7,10 @@ services:
       APP_PORT: 548
 
   server:
-    image: crazymax/samba
+    image: msjpq/time-machine
     network_mode: host
     volumes:
-      - ${UMBREL_ROOT}/data/storage:/samba/share
+      - ${UMBREL_ROOT}/data/storage:/share
     environment:
       - "TZ=Europe/Paris"
       - "SAMBA_LOG_LEVEL=0"
