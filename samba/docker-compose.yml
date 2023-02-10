@@ -7,8 +7,11 @@ services:
       APP_PORT: 548
 
   server:
-    image: cptactionhank/netatalk:latest
-    restart: always
+    image: crazymax/samba
     network_mode: host
     volumes:
-      - ${UMBREL_ROOT}/data/storage/samba:/media
+      - ${UMBREL_ROOT}/data/storage:/samba/share
+    environment:
+      - "TZ=Europe/Paris"
+      - "SAMBA_LOG_LEVEL=0"
+    restart: always
